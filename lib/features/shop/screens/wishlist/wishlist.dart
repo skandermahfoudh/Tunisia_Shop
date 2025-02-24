@@ -7,19 +7,23 @@ import 'package:t_store/common/widgets/layout/grid_layout.dart';
 import 'package:t_store/common/widgets/product/product_cards/product_card_vertical.dart';
 import 'package:t_store/features/shop/screens/home/home.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+import 'package:t_store/features/shop/controllers/wishlist_controller.dart';
 
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final wishlistController = Get.find<WishlistController>();
+
     return Scaffold(
       appBar: TAppBar(
-        title:
-            Text('Wishlist', style: Theme.of(context).textTheme.headlineMedium),
+        title: Text('Wishlist', 
+            style: Theme.of(context).textTheme.headlineMedium),
         actions: [
           TCircularIcon(
-              icon: Iconsax.add, onPressed: () => Get.to(const HomeScreen())),
+              icon: Iconsax.add, 
+              onPressed: () => Get.to(const HomeScreen())),
         ],
       ),
       body: SingleChildScrollView(
@@ -27,9 +31,18 @@ class FavouriteScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
-              TGridLayout(
-                  itemCount: 4,
-                  itemBuilder: (_, index) => const TProductCardVertical())
+              Obx(
+                () => wishlistController.wishlist.isEmpty
+                    ? const Center(
+                        child: Text('Your wishlist is empty'),
+                      )
+                    : TGridLayout(
+                        itemCount: wishlistController.wishlist.length,
+                        itemBuilder: (_, index) => TProductCardVertical(
+                          product: wishlistController.wishlist[index],
+                        ),
+                      ),
+              ),
             ],
           ),
         ),

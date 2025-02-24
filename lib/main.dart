@@ -7,7 +7,9 @@ import 'package:get_storage/get_storage.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:t_store/app.dart';
 import 'package:t_store/data/repositories/authentication_repository.dart';
+import 'package:t_store/features/shop/services/products_service.dart';
 import 'package:t_store/firebase_options.dart';
+import 'package:t_store/startup_initializer.dart';
 
 Future<void> main() async {
   //Widgets Binding
@@ -26,12 +28,8 @@ Future<void> main() async {
     (FirebaseApp value) => Get.put(AuthenticationRepository()),
   );
 
-  //Initialize Supabase
-  await Supabase.initialize(
-    url: 'https://xjyqicgkkshowzglsofw.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhqeXFpY2dra3Nob3d6Z2xzb2Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQzNzc4MDMsImV4cCI6MjA1OTk1MzgwM30.6qv9hXWDfvSxuEBS1sgaHiFWyHNo3hYieh8TMEmgev8',
-  );
+   // 🚀 Import clothes on first launch
+  await StartupInitializer.runInitialSetup();
 
   //Initialize Authentication
 

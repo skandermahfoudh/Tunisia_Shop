@@ -11,8 +11,6 @@ environment:
 
 #--------------- PACKAGES ------------------#
 dependencies:
-  
-
   flutter:
     sdk: flutter
 
@@ -26,6 +24,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   connectivity_plus: ^6.0.3
   lottie: ^3.1.0 # OR RIVE
+  cached_network_image: ^3.3.1
   
 
   # Icons
@@ -46,9 +45,9 @@ dependencies:
   supabase_flutter: ^1.10.3
   
   # Firebase
-  firebase_core: ^2.32.0
+  firebase_core: ^2.24.2
   firebase_auth: ^4.19.4
-  cloud_firestore: ^4.17.2
+  cloud_firestore: ^4.15.5
   firebase_storage: ^11.7.4
   google_sign_in: ^6.2.2
 
@@ -81,6 +80,7 @@ flutter:
     - assets/images/animations/
     - assets/icons/payment_methods/
     - assets/images/on_boarding_images/
+    # - Products Scrapper/datasets/zara_homme.json
 
   #--------------- LOCAL FONTS ------------------#
   fonts:

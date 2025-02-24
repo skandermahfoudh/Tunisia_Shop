@@ -7,6 +7,7 @@ class TImages {
   static const String darkAppLogo = "assets/logos/t-store-splash-logo-black.png";
   static const String lightAppLogo = "assets/logos/t-store-splash-logo-white.png";
   static const String appLogo = "assets/logos/tunisia-shop-logo-white.png";
+  static const String peakLogo = "assets/logos/peak_logo.jpg";
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
   static const String facebook = "assets/logos/facebook-icon.png";
@@ -21,8 +22,13 @@ class TImages {
   static const String toyIcon = "assets/icons/categories/icons8-wooden-toy-car-50.png";
   static const String furnitureIcon = "assets/icons/categories/icons8-dining-chair-64.png";
   static const String jeweleryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
-  static const String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
-
+  static const String smartphone = "assets/icons/categories/icons8-smartphone-50.png";
+  static const String menIcon = "assets/icons/categories/icons8-homme-debout-50.png";
+  static const String entertainment = "assets/icons/categories/icons8-manette-50.png";
+  static const String informatique = "assets/icons/categories/icons8-poste-de-travail-50.png";
+  static const String auto_moto = "assets/icons/categories/icons8-moto-50.png";
+  static const String sport = "assets/icons/categories/icons8-sport-50.png";
+  static const String multimedia = "assets/icons/categories/icons8-collection-de-cd-50.png";
   // -- Brand Icons
   static const String nikeLogo = "assets/icons/brands/nike.png";
   static const String adidasLogo = "assets/icons/brands/adidas-logo.png";
@@ -34,6 +40,10 @@ class TImages {
   static const String hermanMillerLogo = "assets/icons/brands/herman-miller-logo.png";
   static const String ikeaLogo = "assets/icons/brands/ikea_logo.png";
   static const String acerlogo = "assets/icons/brands/acer_logo.png";
+  static const String mytekLogo = "assets/icons/brands/mytek-logo.png";
+  static const String tunisianetLogo = "assets/icons/brands/tunisianet-logo.png";
+  static const String existLogo = "assets/icons/brands/exist-logo.png";
+
 
   // -- Animations
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.gif";
@@ -129,6 +139,7 @@ class TImages {
   static const String productImage75 = "assets/images/products/slipper-product-2.png";
   static const String productImage76 = "assets/images/products/slipper-product-3.png";
   static const String productImage77= "assets/images/products/slipper-product.png";
+  static const String productImage78 = "assets/images/products/peak_shoes(1).jpg";
 
 
 

@@ -1,51 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
-import 'package:t_store/common/widgets/product/product_cards/product_card_horizontal.dart';
-import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:get/get.dart';
+import 'package:t_store/features/shop/controllers/category_controller.dart';
+import 'package:t_store/common/widgets/product/product_cards/product_card_vertical.dart';
 
-class SubCategoriesScreen extends StatelessWidget {
-  const SubCategoriesScreen({super.key});
+class CategoryProductsScreen extends StatelessWidget {
+  final String category;
+
+  const CategoryProductsScreen({
+    super.key,
+    required this.category,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CategoryController>();
+
+    // Trigger fetch if products are not already loaded
+    if (controller.products.isEmpty && !controller.isLoading.value) {
+      controller.getCategoryProducts(category);
+    }
+
     return Scaffold(
-      appBar: const TAppBar(title: Text('Sports shirts'), showBackArrow: true),
-      body: SingleChildScrollView(
-          child: Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: Column(
-                children: [
-                  // Banner
-                  const TRoundedImage(
-                      width: double.infinity,
-                      imageUrl: TImages.promoBanner3,
-                      applyImageRadius: true),
-                  const SizedBox(height: TSizes.spaceBtwSections),
-
-                  //Sub Categories
-                  Column(
-                    children: [
-                      //Heading
-
-                      TSectionHeading(title: 'Sport shoes', onPressed: () {}),
-                      const SizedBox(height: TSizes.spaceBtwItems / 2),
-
-                      SizedBox(
-                        height: 120,
-                        child: ListView.separated(
-                          itemCount: 4,
-                          scrollDirection: Axis.horizontal,
-                          separatorBuilder: (context, index) => const SizedBox(width: TSizes.spaceBtwItems),
-                          itemBuilder: (context, index) => const TProductCardHorizontal(),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ))),
+      appBar: AppBar(title: Text(category)),
+      body: Obx(
+        () => controller.isLoading.value
+            ? const Center(child: CircularProgressIndicator())
+            : GridView.builder(
+                padding: const EdgeInsets.all(16),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // Changed to 2 cards per row
+                  mainAxisSpacing: 30,
+                  crossAxisSpacing: 20,
+                  mainAxisExtent: 300, // Fixed height for each card
+                ),
+                itemCount: controller.products.length,
+                itemBuilder: (context, index) {
+                  final product = controller.products[index];
+                  return SizedBox(
+                    height: 300, // Match the mainAxisExtent
+                    child: TProductCardVertical(
+                      product: product,
+                      showBorder: true,
+                    ),
+                  );
+                },
+              ),
+      ),
     );
   }
 }

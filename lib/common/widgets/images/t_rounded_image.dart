@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:t_store/utils/constants/image_strings.dart';
 
 class TRoundedImage extends StatelessWidget {
   const TRoundedImage({
@@ -29,19 +31,45 @@ class TRoundedImage extends StatelessWidget {
   final VoidCallback? onPressed;
   final double borderRadius;
 
+  ImageProvider getImageProvider() {
+    if (isNetworkImage) {
+      return NetworkImage(imageUrl);
+    }
+    return AssetImage(imageUrl);
+  }
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("🔗 Image URL: $imageUrl");
     return GestureDetector(
       onTap: onPressed,
       child: Container(
         width: width,
         height: height,
         padding: padding,
-        decoration: BoxDecoration(border: border, color: backgroundColor, borderRadius: BorderRadius.circular(borderRadius)),
+        decoration: BoxDecoration(
+          border: border, 
+          color: backgroundColor, 
+          borderRadius: BorderRadius.circular(borderRadius)
+        ),
         child: ClipRRect(
-          borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero, 
-          child:  Image(fit: fit, image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(imageUrl) as ImageProvider),
+          borderRadius: applyImageRadius 
+              ? BorderRadius.circular(borderRadius) 
+              : BorderRadius.zero, 
+          child: isNetworkImage 
+              ? CachedNetworkImage(
+                  imageUrl: imageUrl, // Use the actual URL from Firebase
+                  fit: fit,
+                  placeholder: (context, url) => const SizedBox(), // Removed loading indicator
+                  errorWidget: (context, url, error) => Image.asset(
+                    TImages.productImage1, // Fallback local asset
+                    fit: fit,
+                  ),
+                )
+              : Image.asset(
+                  imageUrl,
+                  fit: fit,
+                ),
         ),
       ),
     );

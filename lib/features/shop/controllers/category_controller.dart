@@ -1,44 +1,44 @@
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:t_store/data/repositories/categories/category_repository.dart';
-import 'package:t_store/features/shop/models/category_model.dart';
-import 'package:t_store/utils/popups/loaders.dart';
+import 'package:t_store/features/shop/models/products_model.dart';
 
-class CategoryController extends GetxController{
-  static CategoryController get instance => Get.find();
-  
-  final isLoading = false.obs;
-  final _categoryRepository = Get.put(CategoryRepository());
-  RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
-  RxList<CategoryModel> featuredCategories = <CategoryModel>[].obs;
+class CategoryController extends GetxController {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  RxList<ProductsModel> products = <ProductsModel>[].obs;
+  RxBool isLoading = false.obs;
 
-  @override
-  void onInit(){
-    fetchCategories();
-    super.onInit();
-  }
-
-  // -- Load category data
-  Future<void> fetchCategories () async {
+  Future<void> getCategoryProducts(String categoryName) async {
     try {
-      // Show loader while loading categories
       isLoading.value = true;
-      TLoaders.customToast(message: 'Scraping Categories...');
+      products.clear();
 
-      // Fetch categories from data source (Firestore, API , etc)
-      final categories = await _categoryRepository.getAllCategories();
+      print('Fetching products for $categoryName...');
 
-      // Update the categories list
-      allCategories.assignAll(categories);
-      
-      //Filter featured categories 
-      featuredCategories.assignAll(allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(8).toList());
+      // Fetch products under the category
+      final productsSnapshot = await _firestore
+          .collection('Categories')
+          .doc(categoryName)
+          .collection('Products')
+          .get();  // Directly fetching from the 'Products' subcollection
 
-     
-    }catch (e){
-      TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
-    }finally {
-      // Remove loader
+      print('Found ${productsSnapshot.docs.length} products in $categoryName');
+
+      // Map the product documents to your model
+      final categoryProducts = productsSnapshot.docs
+          .map((doc) {
+            final productData = doc.data() as Map<String, dynamic>;
+            // Using the ProductsModel.fromMap constructor to map data
+            return ProductsModel.fromMap(productData);
+          })
+          .toList();
+
+      // Set all products to the list
+      products.value = categoryProducts;
+      print('✅ Total products loaded: ${products.length}');
+
+    } catch (e) {
+      print('❌ Error fetching products for $categoryName: $e');
+    } finally {
       isLoading.value = false;
     }
   }

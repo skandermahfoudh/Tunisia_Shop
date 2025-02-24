@@ -1,73 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/common/widgets/custom_shapes/curved_edges/curved_edges_widgets.dart';
 import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
+import 'package:t_store/features/shop/models/products_model.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
-class TProductImageSlider extends StatelessWidget {
-  const TProductImageSlider({
+class TProductImageBox extends StatelessWidget {
+  final ProductsModel product;
+
+  const TProductImageBox({
     super.key,
-   
+    required this.product,
   });
-
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return TCurvedEdgeWidget(
-      child: Container(
-        color: dark ? TColors.darkerGrey : TColors.light,
-        child: Stack(
-          children: [
-            // -- Main Large Image
-            const SizedBox(
-              height: 400,
-              child: Padding(
-                padding: EdgeInsets.all(TSizes.productImageRadius * 2),
-                child: Center(
-                    child: Image(
-                        image: AssetImage(TImages.productImage1))),
+
+    return Padding(
+      padding: const EdgeInsets.all(TSizes.defaultSpace),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // App Bar
+          const TAppBar(
+            showBackArrow: true,
+            actions: [
+              TCircularIcon(icon: Iconsax.heart, color: Colors.red),
+            ],
+          ),
+          const SizedBox(height: TSizes.spaceBtwItems),
+
+          // Image inside a box
+          Container(
+            width: double.infinity,
+            height: 250,
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: dark ? TColors.darkerGrey : TColors.light,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: TColors.primary,
+                width: 1.5,
               ),
             ),
-    
-            // -- Image Slider
-            Positioned(
-              right: 0,
-              bottom: 30,
-              left: TSizes.defaultSpace,
-              child: SizedBox(
-                height: 80,
-                child: ListView.separated(
-                  itemCount: 4,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  separatorBuilder: (_, __) =>
-                      const SizedBox(width: TSizes.spaceBtwItems),
-                  itemBuilder: (_, index) => TRoundedImage(
-                      width: 80,
-                      backgroundColor:
-                          dark ? TColors.dark : TColors.white,
-                      border: Border.all(color: TColors.primary),
-                      padding: const EdgeInsets.all(TSizes.sm),
-                      imageUrl: TImages.productImage3),
-                ),
+            child: CachedNetworkImage(
+              imageUrl: product.imageUrl,
+              fit: BoxFit.cover,
+              placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) => Image.asset(
+                TImages.appLogo,
+                fit: BoxFit.contain,
               ),
             ),
-            // -- Appbar Icons
-            const TAppBar(
-              showBackArrow: true,
-              actions: [
-                TCircularIcon(icon: Iconsax.heart5, color: Colors.red)
-              ],
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
