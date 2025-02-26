@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "185948948533",
+    "project_id": "tunisiashop-b1332",
+    "storage_bucket": "tunisiashop-b1332.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185948948533:android:dcbea40255c64a8ba8097c",
+        "android_client_info": {
+          "package_name": "com.example.t_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185948948533-sfnn8esu24tn3nvidp8j09kp3fm72io9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.t_store",
+            "certificate_hash": "bddcaabd556d143f4e8b00ca9529a9fdcc01ecc3"
+          }
+        },
+        {
+          "client_id": "185948948533-4gf20jtvh1cifpncpuhturs3jvehc9f5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzicxC2eQkGFIMdl_-RE8SiGjNA8BeGog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185948948533-4gf20jtvh1cifpncpuhturs3jvehc9f5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "185948948533-gbvmpoijn536a7jq5q8t174k6v4t6dgf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tStore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

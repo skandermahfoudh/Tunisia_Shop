@@ -1,0 +1,6 @@
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#000000"
+  image: C:\Users\skand\Downloads\tunisia shop\tunisia shop\assets\logos\tunisia-shop-splash-logo-white.png
+  image_dark: C:\Users\skand\Downloads\tunisia shop\tunisia shop\assets\logos\tunisia-shop-splash-logo-black.png
+  web: false

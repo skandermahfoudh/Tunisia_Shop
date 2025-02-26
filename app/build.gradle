@@ -1,0 +1,11 @@
+android {
+    compileSdkVersion 35
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        // ...existing code...
+        targetSdkVersion 35
+        // ...existing code...
+    }
+    // ...existing code...
+}
