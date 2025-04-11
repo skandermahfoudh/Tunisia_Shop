@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,8 +22,8 @@ class LoginController extends GetxController{
 
     @override
     void onInit(){
-      email.text = localStorage.read('REMEMBER_ME_EMAIL');
-      password.text = localStorage.read('REMEMBER_ME_PASSWORD');
+      email.text = localStorage.read('REMEMBER_ME_EMAIL') ?? '';
+      password.text = localStorage.read('REMEMBER_ME_PASSWORD') ?? '';
       super.onInit();
     }
 

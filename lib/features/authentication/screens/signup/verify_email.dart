@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:t_store/common/widgets/success_screen/success_screen.dart';
 import 'package:t_store/data/repositories/authentication_repository.dart';
 import 'package:t_store/features/authentication/controllers/signup/verify_email_controller.dart';
-import 'package:t_store/features/authentication/screens/login/login.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
@@ -29,7 +26,7 @@ class VerifyEmailScreen extends StatelessWidget {
       ),
       body:  SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
 
