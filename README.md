@@ -6,14 +6,14 @@ TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored pro
 
 
 # 🚀 Features
-### 🛍️ Browse thousands of sponsored products from Facebook & Instagram
-### 🔍 Filter by category, subcategory, price, location, and availability
-### 📌 Save favorites for quick access
-### 📤 Receive alerts for new matching deals
-### 🖼️ View detailed product info with images, pricing, discounts, and source
-### 📈 Track trending items and most viewed products
-### 🔗 Redirect to the original product source for purchase
-### 📱 Cross-platform mobile experience built with Flutter
+- 🛍️ Browse thousands of sponsored products from Facebook & Instagram
+- 🔍 Filter by category, subcategory, price, location, and availability
+- 📌 Save favorites for quick access
+- 📤 Receive alerts for new matching deals
+- 🖼️ View detailed product info with images, pricing, discounts, and source
+- 📈 Track trending items and most viewed products
+- 🔗 Redirect to the original product source for purchase
+- 📱 Cross-platform mobile experience built with Flutter
 
 
 
@@ -57,9 +57,9 @@ flutter run
 
 
 # 📍 Roadmap
--✅ MVP with product listing & filtering
--✅ Alerts & favorites
--⏳ In-app chatbot (AI-powered recommendations)
--⏳ Advanced filters (brand, delivery time, seller ratings)
--⏳ Payment gateway integration
--⏳ Admin dashboard for monitoring scraped data
+- ✅ MVP with product listing & filtering
+- ✅ Alerts & favorites
+- ⏳ In-app chatbot (AI-powered recommendations)
+- ⏳ Advanced filters (brand, delivery time, seller ratings)
+- ⏳ Payment gateway integration
+- ⏳ Admin dashboard for monitoring scraped data
