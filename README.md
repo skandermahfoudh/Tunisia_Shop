@@ -63,3 +63,21 @@ flutter run
 - ⏳ Advanced filters (brand, delivery time, seller ratings)
 - ⏳ Payment gateway integration
 - ⏳ Admin dashboard for monitoring scraped data
+
+# 🤝 Contributing
+We welcome contributions!
+To get started:
+1. Fork the repository
+2. Create a feature branch:
+```bash
+git checkout -b feature/YourFeature
+```
+3. Commit your changes:
+```bash 
+git commit -m "Add YourFeature"
+```
+4. Push to your branch:
+```bash
+git push origin feature/YourFeature
+```
+5. Open a Pull Request
