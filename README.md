@@ -24,7 +24,7 @@ TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored pro
 | Data Scraping | Apify             |
 | Auth          | Firebase Auth/JWT |
 
-#🛠️ Installation
+# 🛠 Installation
 Clone the repository:
 ```bash
 git clone https://github.com/yourusername/tunisiashop-mobile.git
