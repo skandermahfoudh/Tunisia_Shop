@@ -14,14 +14,15 @@ TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored pro
 🔗 Redirect to the original product source for purchase
 📱 Cross-platform mobile experience built with Flutter
 
-📦 Tech Stack
-Layer	Technology
-Frontend	Flutter (Mobile)
-Backend API	Node.js / Django
-Database	Firebase
-Admin Panel	React.js (Web Frontend)
-Data Scraping	Apify (Facebook & Instagram sponsored ads)
-Authentication	Firebase Auth / JWT
+##📦 Tech Stack
+| Layer         | Technology         |
+|---------------|-------------------|
+| Frontend      | Flutter           |
+| Backend API   | Node.js / Django  |
+| Database      | Firebase          |
+| Admin Panel   | React.js          |
+| Data Scraping | Apify             |
+| Auth          | Firebase Auth/JWT |
 
 🛠️ Installation
 Clone the repository:
