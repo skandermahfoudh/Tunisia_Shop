@@ -1,5 +1,4 @@
-# 🇹🇳 TunisiaShop
-# Your Mobile App for Discovering Sponsored Products in Tunisia
+# 🇹🇳 TunisiaShop Your Mobile App for Discovering Sponsored Products in Tunisia
 
 TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored products from Facebook and Instagram, giving Tunisian users access to deals and items often hidden in social media ads. With smart filtering, alerts, and saved items, TunisiaShop is the go-to shopping assistant for finding relevant and local offers.
 
