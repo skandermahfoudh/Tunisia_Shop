@@ -3,6 +3,7 @@ Your Mobile App for Discovering Sponsored Products in Tunisia
 
 TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored products from Facebook and Instagram, giving Tunisian users access to deals and items often hidden in social media ads. With smart filtering, alerts, and saved items, TunisiaShop is the go-to shopping assistant for finding relevant and local offers.
 
+
 🚀 Features
 🛍️ Browse thousands of sponsored products from Facebook & Instagram
 🔍 Filter by category, subcategory, price, location, and availability
@@ -12,6 +13,7 @@ TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored pro
 📈 Track trending items and most viewed products
 🔗 Redirect to the original product source for purchase
 📱 Cross-platform mobile experience built with Flutter
+
 📦 Tech Stack
 Layer	Technology
 Frontend	Flutter (Mobile)
@@ -20,49 +22,22 @@ Database	Firebase
 Admin Panel	React.js (Web Frontend)
 Data Scraping	Apify (Facebook & Instagram sponsored ads)
 Authentication	Firebase Auth / JWT
+
 🛠️ Installation
 Clone the repository:
-
-bash
+```bash
 git clone https://github.com/yourusername/tunisiashop-mobile.git
 cd tunisiashop-mobile
+```
 Install dependencies:
-
-bash
+```bash 
 flutter pub get
+```
 Configure environment variables:
-
-bash
+```bash
 cp .env.example .env
+```
 Run the app (emulator or device):
-
-bash
+```bash
 flutter run
-🧪 Usage
-Sign up or log in using your email
-Explore trending or latest products
-Use filters to narrow results
-Tap any product to view full details
-Save your favorite products or share them
-Get real-time alerts for new similar products
-📍 Roadmap
-✅ MVP with product listing & filtering
-✅ Alerts & favorites
-⏳ In-app chatbot (AI-powered recommendations)
-⏳ Advanced filters (brand, delivery time, seller ratings)
-⏳ Payment gateway integration
-⏳ Admin dashboard for monitoring scraped data
-🤝 Contributing
-We welcome contributions!
-To get started:
-
-Fork the repository
-Create a feature branch:
-bash
-git checkout -b feature/YourFeature
-Commit your changes:
-bash
-git commit -m "Add YourFeature"
-Push to your branch:
-bash
-git push origin feature/YourFeature
+```
