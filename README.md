@@ -4,15 +4,15 @@ Your Mobile App for Discovering Sponsored Products in Tunisia
 TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored products from Facebook and Instagram, giving Tunisian users access to deals and items often hidden in social media ads. With smart filtering, alerts, and saved items, TunisiaShop is the go-to shopping assistant for finding relevant and local offers.
 
 
-#🚀 Features
-🛍️ Browse thousands of sponsored products from Facebook & Instagram
-🔍 Filter by category, subcategory, price, location, and availability
-📌 Save favorites for quick access
-📤 Receive alerts for new matching deals
-🖼️ View detailed product info with images, pricing, discounts, and source
-📈 Track trending items and most viewed products
-🔗 Redirect to the original product source for purchase
-📱 Cross-platform mobile experience built with Flutter
+# 🚀 Features
+## 🛍️ Browse thousands of sponsored products from Facebook & Instagram
+## 🔍 Filter by category, subcategory, price, location, and availability
+## 📌 Save favorites for quick access
+## 📤 Receive alerts for new matching deals
+## 🖼️ View detailed product info with images, pricing, discounts, and source
+## 📈 Track trending items and most viewed products
+## 🔗 Redirect to the original product source for purchase
+## 📱 Cross-platform mobile experience built with Flutter
 
 # 📦 Tech Stack
 | Layer         | Technology         |
