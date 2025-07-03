@@ -14,7 +14,7 @@ TunisiaShop is a powerful and intuitive mobile app that aggregates sponsored pro
 🔗 Redirect to the original product source for purchase
 📱 Cross-platform mobile experience built with Flutter
 
-#📦 Tech Stack
+# 📦 Tech Stack
 | Layer         | Technology         |
 |---------------|-------------------|
 | Frontend      | Flutter           |
